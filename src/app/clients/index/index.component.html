@@ -1,0 +1,48 @@
+<body>
+    <div class="container">
+        <h2 class="text-center text-light fs-2 mt-5 fw-bold">Liste des clients</h2>
+        <a routerLink="/clients/create" style="background-color: #D879CF;" class="btn rounded-3 text-light my-5">
+            <i class="bi bi-person-add"></i>
+            Ajouter un client
+        </a>
+        <div>
+            <input matInput (keyup)="filter($event)" placeholder="Rechercher">
+        </div>
+
+        <table mat-table [dataSource]="clients" class="mat-elevation-z8" #mytable matSort>
+            <tr mat-header-row *matHeaderRowDef="columns"></tr>
+            <tr mat-row *matRowDef="let  row; columns: columns;"></tr>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom</th>
+                <td mat-cell *matCellDef="let t">{{t.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+                <td mat-cell *matCellDef="let t">{{t.email}}</td>
+            </ng-container>
+            <ng-container matColumnDef="adress">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Adresse</th>
+                <td mat-cell *matCellDef="let t">{{t.adresse}}</td>
+            </ng-container>
+            <ng-container matColumnDef="tel">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Telephone</th>
+                <td mat-cell *matCellDef="let t">{{t.tel}}</td>
+            </ng-container>
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+                <td mat-cell *matCellDef="let t">
+                    <a href="#" [routerLink]="['/clients/', t.id, 'edit']" class="btn btn-default">
+                        <i class="bi bi-pencil-square" style="color:blue"></i>
+                    </a>
+                    <button type="button" (click)=" deleteClient(t.id)" class="btn btn-default">
+                        <i class="bi bi-trash-fill" style="color:red"></i>
+                    </button>
+
+                </td>
+            </ng-container>
+
+        </table>
+        <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+    </div>
+</body>

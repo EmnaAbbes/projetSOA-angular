@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #dfa2f6, #b5f0f6)
+}
+
+a {
+    text-decoration: none;
+    font-weight:400;
+}
