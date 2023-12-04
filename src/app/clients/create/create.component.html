@@ -1,1 +1,53 @@
-<p>create works!</p>
+<!-- Button trigger modal -->
+<a style="background-color: #D879CF;" class="btn rounded-3 text-light my-5" (click)="openModal()">
+    <i class="bi bi-person-add fs-5 me-2"></i>
+    Ajouter un client
+</a>
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Ajout Client</h4>
+                <button type="button" class="btn btn-default" aria-label="Close" (click)="closeModal()"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <template *ngTemplateOutlet="formClient"></template>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Form -->
+
+<ng-template #formClient>
+
+    <form (ngSubmit)="ajoutClient()">
+
+        <div class="mb-3">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nom" [(ngModel)]="clients.name">
+        </div>
+        <div class="mb-3">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                [(ngModel)]="clients.email">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="adr" name="adr" placeholder="Adresse"
+                [(ngModel)]="clients.adresse">
+        </div>
+        <div class="mb-3">
+            <input type="number" class="form-control" id="tel" name="tel" placeholder="Telephone"
+                [(ngModel)]="clients.tel">
+        </div>
+        <div class="text-center">
+            <button type="submit" style="background-color: #D879CF;" class="btn text-light"
+                (clic)="ajoutClient()">Enregistrer</button>
+        </div>
+
+    </form>
+
+</ng-template>

@@ -24,7 +24,7 @@ export class ClientService {
       )
   }
   create(client: Client): Observable<any> {
-    return this.httpClient.post(this.apiURL + '/clients/', JSON.stringify(client), this.httpOptions)
+    return this.httpClient.post(this.apiURL + '/clients', JSON.stringify(client), this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )

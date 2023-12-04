@@ -1,12 +1,26 @@
 <body>
     <div class="container">
-        <h2 class="text-center text-light fs-2 mt-5 fw-bold">Liste des clients</h2>
-        <a routerLink="/clients/create" style="background-color: #D879CF;" class="btn rounded-3 text-light my-5">
-            <i class="bi bi-person-add"></i>
-            Ajouter un client
-        </a>
+        <div class="mt-5 align-items-center justify-content-center">
+            <div class="text-center">
+                <img src="assets/user.gif" width="45" alt="">
+            </div>
+            <div class="text-center">
+                <h2 class="text-light fs-2 fw-bold">Gestion des clients</h2>
+            </div>
+        </div>
         <div>
-            <input matInput (keyup)="filter($event)" placeholder="Rechercher">
+            <app-create></app-create>
+        </div>
+
+        <div class="input-group mb-4" style="width: 200px;">
+            <div class="form-outline" data-mdb-input-init>
+                <input id="search-focus" type="search" id="form1" class="form-control" matInput
+                    (keyup)="filter($event)" />
+                <label class="form-label" for="form1" style="color: #ac4ca2;">Search</label>
+            </div>
+            <button type="button" class="btn" style="background-color: #D879CF;" data-mdb-ripple-init>
+                <i class="bi bi-search text-light"></i>
+            </button>
         </div>
 
         <table mat-table [dataSource]="clients" class="mat-elevation-z8" #mytable matSort>
@@ -31,12 +45,10 @@
             <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
                 <td mat-cell *matCellDef="let t">
-                    <a href="#" [routerLink]="['/clients/', t.id, 'edit']" class="btn btn-default">
-                        <i class="bi bi-pencil-square" style="color:blue"></i>
-                    </a>
+                    <app-edit [clientId]="t.id"></app-edit>
                     <button type="button" (click)=" deleteClient(t.id)" class="btn btn-default">
-                        <i class="bi bi-trash-fill" style="color:red"></i>
-                    </button>
+                <img src="assets/delete.gif" width="30">                    
+                </button>
 
                 </td>
             </ng-container>

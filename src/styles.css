@@ -2,6 +2,7 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import "~bootstrap/dist/css/bootstrap.css";
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~mdb-ui-kit/css/mdb.min.css';
 
 body {
     height: 100vh;
@@ -12,5 +13,8 @@ a {
     text-decoration: none;
     font-weight:400;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 364858f917286c7888149834caf7ff89aaf9d1a6
