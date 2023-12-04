@@ -1,0 +1,19 @@
+@import url("https://fonts.google.com");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Exo" , sans-serif;
+    background-color: #d8d8d8;
+}
+
+.main-container {
+    display: flex;
+    .main {
+        padding: 30px;
+    }
+}

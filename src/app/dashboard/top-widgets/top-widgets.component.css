@@ -1,0 +1,50 @@
+.widget-container {
+    display: flex;
+    align-items: space-between;
+    .widget {
+        width: 325px;
+        height: 175px;
+        background-color: #fff;
+        border-radius: 10px;
+        color: #000000;
+        margin: 10px;
+        box-shadow: 5px 5px 5px #777676;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        &.pink{
+            background-color: rgb(162, 217, 246);
+        }
+        &.red{
+            background-color: rgb(154, 214, 247);
+        }
+        &.green{
+            background-color: rgb(246, 162, 236);
+        }
+        @media only screen and (max-width: 1600px){
+            width: 1280px;
+        }
+        @media only screen and (max-width: 1500px){
+            width: 1180px;
+        }
+        @media only screen and (max-width: 1400px){
+            width: 1080px;
+        }
+        @media only screen and (max-width: 1200px){
+            width: 980px;
+        }
+        .top{
+            font-size: 30px;
+            @media only screen and (max-width: 1200px){
+                width: 26px;
+            }
+        }
+        .bottom{
+            font-size: 20px;
+            margin-top: 10px;
+            @media only screen and (max-width: 1200px){
+                width: 16px;
+            }
+        }
+    }
+}
