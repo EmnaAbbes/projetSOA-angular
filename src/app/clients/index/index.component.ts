@@ -12,7 +12,7 @@ import { MatSort } from '@angular/material/sort';
 export class IndexComponent implements OnInit {
 
   clients: any
-  columns: string[] = ['name', 'email', 'adress', 'tel', 'id'];
+  columns: string[] = ['name', 'email', 'adress','birthDate','inscDate' ,'tel', 'id'];
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;

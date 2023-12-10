@@ -4,4 +4,6 @@ export class Client {
     email:string
     adresse:string
     tel:number
+    birthDate:Date
+    inscDate:Date
 }
